@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+  Articles for {{ year }}년 {{ month }}월 {{ day }}일
+{% endblock %}
+{% block content %}
+  <div class="container">
+    <h2>Articles for {{ year }}년 {{ month }}월 {{ day }}일</h2>
+    {% for article in article_list %}
+      <p>{{ article.headline }}</p>
+      <p>By {{ article.reporter.full_name }}</p>
+      <p>Published {{ article.pub_date }}</p>
+      <p>{{ article.content }}</p>
+    {% endfor %}
+  </div>
+{% endblock %}
